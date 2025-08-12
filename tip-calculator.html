@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="tip-calculator.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Tip Calculator</div>
+      <div class="input-text">Enter bill amount:</div>
+      <input class="bill-input" type="number" placeholder="dollars" />
+      <label for="presetTips">Select a tip percentage</label>
+      <select
+        class="preset-tip-dropdown"
+        name="presetTips"
+        id="presetTips"
+        onchange="updateCustomInputDisplay()"
+      >
+        <option onclick="inputUpdate()" value="" selected>
+          Select a tip percentage
+        </option>
+        <option value="0.1">10%</option>
+        <option value="0.15">15%</option>
+        <option value="0.2">20%</option>
+        <option value="C">Custom</option>
+      </select>
+      <input
+        class="custom-tip-input"
+        id="custom-tip-input"
+        type="number"
+        placeholder="percent"
+      />
+      <div class="split-row">
+        <div>Split tip:</div>
+        <input
+          class="split-between-input"
+          id="split-between-input"
+          type="number"
+          placeholder="# people"
+        />
+      </div>
+      <button class="calculate-button" onclick="calculateTip()">
+        Calculate Tip
+      </button>
+      <div class="output" id="output"></div>
+    </div>
+
+    <script src="tip-calculator.js"></script>
+  </body>
+</html>
