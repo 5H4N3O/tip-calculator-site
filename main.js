@@ -1,4 +1,11 @@
-import { handleTipInput, updateCustomInputDisplay, calculateTip, outputData } from './modules/tip-calculator.js';
+import {
+  handleTipInput,
+  updateCustomInputDisplay,
+  calculateTip,
+  validateInputs,
+  outputErrors,
+  outputData,
+} from "./modules/tip-calculator.js";
 
 // Reference HTML elements
 const billInput = document.getElementById("bill-input");
@@ -19,9 +26,21 @@ calculateBtn.addEventListener("click", () => {
   const billAmount = billInput.valueAsNumber;
   const tipPercentage = handleTipInput(tipSelection, customTipInput);
   const splitBetween = splitInput.valueAsNumber;
-  // Calculate and display results
-  const processedData = calculateTip(billAmount, tipPercentage, splitBetween, output);
-  console.log(processedData);
 
-  outputData(processedData, output);
+  // input validation
+  const errors = validateInputs(billAmount, tipPercentage, splitBetween);
+  if (errors.length > 0) {
+    outputErrors(errors, output);
+  } else {
+    // Calculate and display results
+    const processedData = calculateTip(
+      billAmount,
+      tipPercentage,
+      splitBetween,
+      output
+    );
+    console.log(processedData); // test
+
+    outputData(processedData, output);
+  }
 });
