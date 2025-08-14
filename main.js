@@ -20,8 +20,8 @@ calculateBtn.addEventListener("click", () => {
   const tipPercentage = handleTipInput(tipSelection, customTipInput);
   const splitBetween = splitInput.valueAsNumber;
   // Calculate and display results
-  const data = calculateTip(billAmount, tipPercentage, splitBetween, output);
-  console.log(data);
+  const processedData = calculateTip(billAmount, tipPercentage, splitBetween, output);
+  console.log(processedData);
 
-  outputData(data, output);
+  outputData(processedData, output);
 });
