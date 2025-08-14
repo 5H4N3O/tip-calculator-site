@@ -15,9 +15,8 @@
         class="preset-tip-dropdown"
         name="tip-selection"
         id="tip-selection"
-        onchange="updateCustomInputDisplay()"
       >
-        <option onclick="inputUpdate()" value="" selected>
+        <option value="" selected>
           Select a tip percentage
         </option>
         <option value="0.1">10%</option>
@@ -41,12 +40,11 @@
           value="1"
         />
       </div>
-      <button class="calculate-button" onclick="calculateTip()">
+      <button class="calculate-button" id="calculate-button">
         Calculate Tip
       </button>
       <div class="output" id="output"></div>
     </div>
-
-    <script src="tip-calculator.js"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>
