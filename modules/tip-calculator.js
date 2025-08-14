@@ -23,3 +23,15 @@ export function calculateTip(billAmount, tipPercentage, splitBetween, output) {
 
   return processedData;
 }
+
+export function outputData(data, output) {
+  output.innerHTML = `
+    <p>This is a test of outputting the calculated tip<p>
+    <p>Bill: $${data.billAmount.toFixed(2)}<p>
+    <p>Tip(${data.tipPercentage.toFixed(2)}) amount split between
+    ${data.splitBetween} people: $${data.tipAmount.toFixed(2)}<p>
+    <p>Total: $${data.totalAmount.toFixed(2)}<p>
+    `;
+}
+
+
