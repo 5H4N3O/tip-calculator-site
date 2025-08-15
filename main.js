@@ -24,35 +24,35 @@ tipSelection.addEventListener("change", () => {
 });
 
 // Reveal or hide the help popout
+// and close when Close button pressed
 helpIcon.addEventListener("click", () => {
   helpPopup.style.display =
     helpPopup.style.display === "block" ? "none" : "block";
 });
-
 helpClose.addEventListener("click", () => {
   helpPopup.style.display = "none";
 });
 
 // Calculate tip when button is clicked
 calculateBtn.addEventListener("click", () => {
-  // Get current user inputs (Make seperate function)
+  // Get current user inputs
   const billAmount = billInput.valueAsNumber;
   const tipPercentage = handleTipInput(tipSelection, customTipInput);
   const splitBetween = splitInput.valueAsNumber;
 
-  // input validation
+  // Validate inputs
   const errors = validateInputs(billAmount, tipPercentage, splitBetween);
   if (errors.length > 0) {
+    // If any errors, output them in the output box
     outputErrors(errors, output);
   } else {
-    // Calculate and display results
+    // If no errors calculate and display results
     const processedData = calculateTip(
       billAmount,
       tipPercentage,
       splitBetween,
       output
     );
-    console.log(processedData); // test
 
     outputData(processedData, output);
   }

@@ -3,7 +3,11 @@
 }
 
 body {
-  background: linear-gradient(45deg, oklch(82.6% 0.12 308.098) 0% 0%, oklch(82.592% 0.12 202.881) 100%);
+  background: linear-gradient(
+    45deg,
+    oklch(82.6% 0.12 308.098) 0% 0%,
+    oklch(82.592% 0.12 202.881) 100%
+  );
 }
 
 html {
@@ -15,14 +19,18 @@ button {
   color: white;
 }
 
-
-button, input, select, .custom-tip-input.show {
+button,
+input,
+select,
+.custom-tip-input.show {
   font-size: clamp(1rem, 2.5vh, 2.5rem);
   padding: clamp(0.5rem, 1.5vh, 1rem);
   box-sizing: border-box;
 }
 
-.input-bill-text, .tip-label, .split-row-text {
+.input-bill-text,
+.tip-label,
+.split-row-text {
   font-size: clamp(1rem, 2.5vh, 2rem);
   margin-bottom: clamp(0.25rem, 1vh, 1rem);
 }
@@ -41,9 +49,9 @@ input,
   border: none;
   color: rgb(200, 200, 200);
   width: 100%;
-  min-height: clamp(1rem, 8vh, 500rem); 
+  min-height: clamp(1rem, 8vh, 500rem);
   border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15); 
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
 }
 
 input::placeholder {
@@ -70,10 +78,10 @@ body {
   align-items: center;
 
   /* Wider on mobile, still limited on large desktop */
-  width: clamp(20rem, 95vw, 40rem); 
+  width: clamp(20rem, 95vw, 40rem);
 
   /* Taller so it fills more space vertically */
-  min-height: clamp(30rem, 80vh, 100rem); 
+  min-height: clamp(30rem, 80vh, 100rem);
 
   /* Padding scales with screen size */
   padding: clamp(1rem, 3vw, 2rem);
@@ -145,7 +153,6 @@ body {
   opacity: 0;
   transition: opacity 0.5s;
   font-size: clamp(1rem, 2.5vh, 2.5rem);
-
 }
 
 .output.show {
@@ -194,7 +201,7 @@ body {
   align-items: center;
   cursor: pointer;
   font-size: 1.25rem;
-  box-shadow: 0 0 0.5rem rgba(0,0,0,0.3);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   user-select: none;
 }
 
@@ -207,7 +214,7 @@ body {
   color: white;
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 0 0 0.5rem rgba(0,0,0,0.5);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
   display: none; /* hidden by default */
   z-index: 10;
 }
