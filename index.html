@@ -13,8 +13,9 @@
   </head>
   <body>
     <div class="container">
-      <div class="title">Tip Calculator</div>
+
       <div class="interaction-container">
+              <div class="title">Tip Calculator</div>
         <div class="bill-row">
           <div class="input-bill-text">Enter bill amount:</div>
           <input
@@ -26,27 +27,27 @@
           />
         </div>
         <div class="tip-row">
-          <label for="tip-selection" class="tip-label"
-            >Select a tip percentage</label
-          >
-          <select
-            class="preset-tip-dropdown"
-            name="tip-selection"
-            id="tip-selection"
-          >
-            <option value="" selected>Select a tip percentage</option>
-            <option value="10">10%</option>
-            <option value="15">15%</option>
-            <option value="20">20%</option>
-            <option value="C">Custom</option>
-          </select>
-          <input
-            class="custom-tip-input"
-            id="custom-tip-input"
-            type="number"
-            placeholder="percent"
-            min="0"
-          />
+          <div class="tip-label">Select a tip percentage</div>
+          <div class="inline-tip-boxes">
+            <select
+              class="preset-tip-dropdown"
+              name="tip-selection"
+              id="tip-selection"
+            >
+              <option value="" selected>Select a tip percentage</option>
+              <option value="10">10%</option>
+              <option value="15">15%</option>
+              <option value="20">20%</option>
+              <option value="C">Custom</option>
+            </select>
+            <input
+              class="custom-tip-input"
+              id="custom-tip-input"
+              type="number"
+              placeholder="percent"
+              min="0"
+            />
+          </div>
         </div>
         <div class="split-row">
           <div class="split-row-text">Split tip:</div>

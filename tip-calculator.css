@@ -6,29 +6,44 @@ body {
   background: linear-gradient(45deg, oklch(82.6% 0.12 308.098) 0% 0%, oklch(82.592% 0.12 202.881) 100%);
 }
 
+html {
+  font-size: clamp(14px, 2vw, 18px);
+}
+
 div,
 button {
   color: white;
-  font-size: clamp(0.5rem, 4vw, 1.25rem);
 }
 
-input,
-select {
-  font-size: clamp(1rem, 1.5vw, 2rem);
+
+button, input, select, .custom-tip-input.show {
+  font-size: clamp(1rem, 2.5vh, 2.5rem);
+  padding: clamp(0.5rem, 1.5vh, 1rem);
+  box-sizing: border-box;
+}
+
+.input-bill-text, .tip-label, .split-row-text {
+  font-size: clamp(1rem, 2.5vh, 2rem);
+  margin-bottom: clamp(0.25rem, 1vh, 1rem);
+}
+
+.bill-row,
+.tip-row,
+.split-row {
+  width: 90%;
+  margin-bottom: clamp(1rem, 3vh, 5rem);
 }
 
 select,
-input {
+input,
+.custom-tip-input.show {
   background-color: rgb(70, 70, 70);
   border: none;
   color: rgb(200, 200, 200);
-  width: 90%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  width: 100%;
+  min-height: clamp(1rem, 8vh, 500rem); 
   border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15); 
 }
 
 input::placeholder {
@@ -43,95 +58,68 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   align-items: center;
 }
 
 .interaction-container {
   background-color: rgb(50, 50, 50);
   display: flex;
-  padding-left: 2%;
-  padding-right: 2%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  margin-bottom: 1px;
   flex-direction: column;
-  width: 90vw;
-  height: auto;
-  max-width: 500px;
   align-items: center;
-  border-radius: 16px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+  /* Wider on mobile, still limited on large desktop */
+  width: clamp(20rem, 95vw, 40rem); 
+
+  /* Taller so it fills more space vertically */
+  min-height: clamp(30rem, 80vh, 100rem); 
+
+  /* Padding scales with screen size */
+  padding: clamp(1rem, 3vw, 2rem);
+
+  margin: 2vh auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
 }
 
 .title {
-  color: rgb(50, 50, 50);
   display: flex;
   justify-content: center;
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: clamp(2rem, 5vh, 4rem);
   font-weight: 500;
 }
 
 .bill-row {
+  margin-top: clamp(1rem, 3vh, 2.5rem);
   width: 90%;
-  margin-top: 5%;
-  margin-bottom: 5%;
 }
 
-.input-bill-text {
-  margin-bottom: 5px;
-}
-
-.bill-input {
-}
-
-.tip-row {
-  width: 90%;
-  margin-bottom: 5%;
-}
-
-.preset-tip-dropdown {
-  width: 100%;
-  margin-top: 5px;
+.inline-tip-boxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(0.5rem, 2vh, 1rem);
 }
 
 .preset-tip-dropdown > option {
   font-size: clamp(0.5rem, 6vw, 1.25rem);
 }
 
-.tip-label {
-}
-
 .custom-tip-input {
-  display: block;
   margin: 0px;
+  min-height: 0px;
   padding: 0px;
-  width: 90%;
   opacity: 0;
   height: 0;
+  width: 0;
   overflow: hidden;
   transition: opacity 0s ease-out, margin 0.25s;
 }
 
 .custom-tip-input.show {
   opacity: 1;
-  height: auto;
-  margin-top: 5px;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 2%;
-  padding-bottom: 2%;
   transition: opacity 0.25s ease-in, margin 0.25s;
-}
-
-.split-row {
-  width: 90%;
-  margin-bottom: 10%;
-}
-
-.split-row-text {
-  margin-bottom: 5px;
 }
 
 .calculate-button {
@@ -142,12 +130,9 @@ body {
   border-radius: 10px;
   border-color: white;
   font-weight: 500;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding: clamp(1rem, 2vh, 3rem);
+  margin-bottom: clamp(1rem, 2vh, 5rem);
   cursor: pointer;
-  margin-bottom: 5%;
   transition: background-color 0.15s, color 0.15s;
 }
 
@@ -159,6 +144,8 @@ body {
 .output {
   opacity: 0;
   transition: opacity 0.5s;
+  font-size: clamp(1rem, 2.5vh, 2.5rem);
+
 }
 
 .output.show {
