@@ -12,6 +12,12 @@ export function updateCustomInputDisplay(selectedTipOption, customTipInput){
   // Update the custom input display
   customTipInput.style.display =
     selectedTipOption.value === "C" ? "inline" : "none";
+export function updateCustomInputDisplay(selectedTipOption, customTipInput) {
+    if (selectedTipOption.value === "C") {
+      customTipInput.classList.add("show");
+    } else {
+      customTipInput.classList.remove("show");
+    }
 }
 
 export function calculateTip(billAmount, tipPercentage, splitBetween, output) {
