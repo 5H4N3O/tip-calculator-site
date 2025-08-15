@@ -3,47 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <title>Tip Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="tip-calculator.css" />
   </head>
   <body>
     <div class="container">
       <div class="title">Tip Calculator</div>
-      <div class="input-text">Enter bill amount:</div>
-      <input class="bill-input" id="bill-input" type="number" placeholder="dollars" />
-      <label for="tip-selection">Select a tip percentage</label>
-      <select
-        class="preset-tip-dropdown"
-        name="tip-selection"
-        id="tip-selection"
-      >
-        <option value="" selected>
-          Select a tip percentage
-        </option>
-        <option value="0.1">10%</option>
-        <option value="0.15">15%</option>
-        <option value="0.2">20%</option>
-        <option value="C">Custom</option>
-      </select>
-      <input
-        class="custom-tip-input"
-        id="custom-tip-input"
-        type="number"
-        placeholder="percent"
-      />
-      <div class="split-row">
-        <div>Split tip:</div>
-        <input
-          class="split-input"
-          id="split-input"
-          type="number"
-          placeholder="# people"
-          value="1"
-        />
+      <div class="interaction-container">
+        <div class="bill-row">
+          <div class="input-bill-text">Enter bill amount:</div>
+          <input
+            class="bill-input"
+            id="bill-input"
+            type="number"
+            min="0"
+            placeholder="Enter your bill (in dollars)"
+          />
+        </div>
+        <div class="tip-row">
+          <label for="tip-selection" class="tip-label"
+            >Select a tip percentage</label
+          >
+          <select
+            class="preset-tip-dropdown"
+            name="tip-selection"
+            id="tip-selection"
+          >
+            <option value="" selected>Select a tip percentage</option>
+            <option value="10">10%</option>
+            <option value="15">15%</option>
+            <option value="20">20%</option>
+            <option value="C">Custom</option>
+          </select>
+          <input
+            class="custom-tip-input"
+            id="custom-tip-input"
+            type="number"
+            placeholder="percent"
+            min="0"
+          />
+        </div>
+        <div class="split-row">
+          <div class="split-row-text">Split tip:</div>
+          <input
+            class="split-input"
+            id="split-input"
+            type="number"
+            placeholder="# people"
+            value="1"
+            min="1"
+          />
+        </div>
+        <button class="calculate-button" id="calculate-button">
+          Calculate Tip
+        </button>
+
+        <div class="output" id="output"></div>
       </div>
-      <button class="calculate-button" id="calculate-button">
-        Calculate Tip
-      </button>
-      <div class="output" id="output"></div>
     </div>
     <script type="module" src="main.js"></script>
   </body>
