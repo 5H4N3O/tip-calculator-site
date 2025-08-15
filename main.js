@@ -14,10 +14,23 @@ const tipSelection = document.getElementById("tip-selection");
 const splitInput = document.getElementById("split-input");
 const calculateBtn = document.getElementById("calculate-button");
 const output = document.getElementById("output");
+const helpIcon = document.querySelector(".help-icon");
+const helpPopup = document.querySelector(".help-popup");
+const helpClose = document.querySelector(".help-close");
 
 // Reveal or hide the custom tip percentage input based on the user's selection
 tipSelection.addEventListener("change", () => {
   updateCustomInputDisplay(tipSelection, customTipInput);
+});
+
+// Reveal or hide the help popout
+helpIcon.addEventListener("click", () => {
+  helpPopup.style.display =
+    helpPopup.style.display === "block" ? "none" : "block";
+});
+
+helpClose.addEventListener("click", () => {
+  helpPopup.style.display = "none";
 });
 
 // Calculate tip when button is clicked

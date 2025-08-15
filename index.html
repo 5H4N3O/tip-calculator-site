@@ -13,9 +13,24 @@
   </head>
   <body>
     <div class="container">
+      <div class="help-container">
+        <div class="help-icon">?</div>
+        <div class="help-popup">
+          <h3>How to use</h3>
+          <ul>
+            <li>Enter the bill amount in dollars.</li>
+            <li>
+              Select a tip percentage or choose "Custom %" to enter your own.
+            </li>
+            <li>Enter the number of people to split the bill.</li>
+            <li>Click "Calculate Tip" to see the results.</li>
+          </ul>
+          <button class="help-close">Close</button>
+        </div>
+      </div>
 
       <div class="interaction-container">
-              <div class="title">Tip Calculator</div>
+        <div class="title">Tip Calculator</div>
         <div class="bill-row">
           <div class="input-bill-text">Enter bill amount:</div>
           <input
@@ -27,7 +42,7 @@
           />
         </div>
         <div class="tip-row">
-          <div class="tip-label">Select a tip percentage</div>
+          <div class="tip-label">Select a tip percentage:</div>
           <div class="inline-tip-boxes">
             <select
               class="preset-tip-dropdown"
@@ -38,19 +53,20 @@
               <option value="10">10%</option>
               <option value="15">15%</option>
               <option value="20">20%</option>
-              <option value="C">Custom</option>
+              <option value="C">Custom %</option>
             </select>
+
             <input
               class="custom-tip-input"
               id="custom-tip-input"
               type="number"
-              placeholder="percent"
+              placeholder="%"
               min="0"
             />
           </div>
         </div>
         <div class="split-row">
-          <div class="split-row-text">Split tip:</div>
+          <div class="split-row-text">Split between how many people?</div>
           <input
             class="split-input"
             id="split-input"
