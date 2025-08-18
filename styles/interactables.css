@@ -1,0 +1,70 @@
+button,
+input,
+select,
+.custom-tip-input.show {
+  font-size: clamp(1rem, 2.5vh, 2.5rem);
+  padding: clamp(0.5rem, 1.5vh, 1rem);
+  box-sizing: border-box;
+}
+
+select,
+input,
+.custom-tip-input.show {
+  background-color: rgb(70, 70, 70);
+  border: none;
+  color: rgb(200, 200, 200);
+  width: 100%;
+  min-height: clamp(1rem, 8vh, 500rem);
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+}
+
+input::placeholder {
+  color: rgb(200, 200, 200);
+}
+
+.inline-tip-boxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(0.5rem, 2vh, 1rem);
+}
+
+.preset-tip-dropdown > option {
+  font-size: clamp(0.5rem, 6vw, 1.25rem);
+}
+
+.custom-tip-input {
+  margin: 0px;
+  min-height: 0px;
+  padding: 0px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0s ease-out, margin 0.25s;
+}
+
+.custom-tip-input.show {
+  opacity: 1;
+  transition: opacity 0.25s ease-in, margin 0.25s;
+}
+
+.calculate-button {
+  color: white;
+  background-color: rgb(50, 50, 50);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: white;
+  font-weight: 500;
+  padding: clamp(1rem, 2vh, 3rem);
+  margin-bottom: clamp(1rem, 2vh, 5rem);
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.calculate-button:hover {
+  background-color: white;
+  color: rgb(50, 50, 50);
+}

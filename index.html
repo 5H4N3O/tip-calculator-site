@@ -9,79 +9,82 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="tip-calculator.css" />
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/help-section.css" />
+    <link rel="stylesheet" href="styles/rows.css" />
+    <link rel="stylesheet" href="styles/interactables.css" />
+    <link rel="stylesheet" href="styles/output.css" />
+    <link rel="stylesheet" href="styles/container.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="help-container">
-        <div class="help-icon">?</div>
-        <div class="help-popup">
-          <h3>How to use</h3>
-          <ul>
-            <li>Enter the bill amount in dollars.</li>
-            <li>
-              Select a tip percentage or choose "Custom %" to enter your own.
-            </li>
-            <li>Enter the number of people to split the bill.</li>
-            <li>Click "Calculate Tip" to see the results.</li>
-          </ul>
-          <button class="help-close">Close</button>
-        </div>
+    <div class="help-container">
+      <div class="help-icon">?</div>
+      <div class="help-popup">
+        <h3>How to use</h3>
+        <ul>
+          <li>Enter the bill amount in dollars.</li>
+          <li>
+            Select a tip percentage or choose "Custom %" to enter your own.
+          </li>
+          <li>Enter the number of people to split the bill.</li>
+          <li>Click "Calculate Tip" to see the results.</li>
+        </ul>
+        <button class="help-close">Close</button>
       </div>
+    </div>
 
-      <div class="interaction-container">
-        <div class="title">Tip Calculator</div>
-        <div class="bill-row">
-          <div class="input-bill-text">Enter bill amount:</div>
+    <div class="calculator-container">
+      <div class="title">Tip Calculator</div>
+      <div class="bill-row">
+        <div class="input-bill-text">Enter bill amount:</div>
+        <input
+          class="bill-input"
+          id="bill-input"
+          type="number"
+          min="0"
+          placeholder="Enter your bill (in dollars)"
+        />
+      </div>
+      <div class="tip-row">
+        <div class="tip-label">Select a tip percentage:</div>
+        <div class="inline-tip-boxes">
+          <select
+            class="preset-tip-dropdown"
+            name="tip-selection"
+            id="tip-selection"
+          >
+            <option value="" selected>Select a tip percentage</option>
+            <option value="10">10%</option>
+            <option value="15">15%</option>
+            <option value="20">20%</option>
+            <option value="C">Custom %</option>
+          </select>
+
           <input
-            class="bill-input"
-            id="bill-input"
+            class="custom-tip-input"
+            id="custom-tip-input"
             type="number"
+            placeholder="%"
             min="0"
-            placeholder="Enter your bill (in dollars)"
           />
         </div>
-        <div class="tip-row">
-          <div class="tip-label">Select a tip percentage:</div>
-          <div class="inline-tip-boxes">
-            <select
-              class="preset-tip-dropdown"
-              name="tip-selection"
-              id="tip-selection"
-            >
-              <option value="" selected>Select a tip percentage</option>
-              <option value="10">10%</option>
-              <option value="15">15%</option>
-              <option value="20">20%</option>
-              <option value="C">Custom %</option>
-            </select>
-
-            <input
-              class="custom-tip-input"
-              id="custom-tip-input"
-              type="number"
-              placeholder="%"
-              min="0"
-            />
-          </div>
-        </div>
-        <div class="split-row">
-          <div class="split-row-text">Split between how many people?</div>
-          <input
-            class="split-input"
-            id="split-input"
-            type="number"
-            placeholder="# people"
-            value="1"
-            min="1"
-          />
-        </div>
-        <button class="calculate-button" id="calculate-button">
-          Calculate Tip
-        </button>
-
-        <div class="output" id="output"></div>
       </div>
+      <div class="split-row">
+        <div class="split-row-text">Split between how many people?</div>
+        <input
+          class="split-input"
+          id="split-input"
+          type="number"
+          placeholder="# people"
+          value="1"
+          min="1"
+        />
+      </div>
+      <button class="calculate-button" id="calculate-button">
+        Calculate Tip
+      </button>
+
+      <div class="output" id="output"></div>
     </div>
     <script type="module" src="main.js"></script>
   </body>

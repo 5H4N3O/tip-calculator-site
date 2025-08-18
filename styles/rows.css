@@ -1,0 +1,17 @@
+.input-bill-text,
+.tip-label,
+.split-row-text {
+  font-size: clamp(1rem, 2.5vh, 2rem);
+  margin-bottom: clamp(0.25rem, 1vh, 1rem);
+}
+
+.bill-row,
+.tip-row,
+.split-row {
+  width: 90%;
+  margin-bottom: clamp(1rem, 3vh, 5rem);
+}
+
+.bill-row {
+  margin-top: clamp(1rem, 3vh, 2.5rem);
+}

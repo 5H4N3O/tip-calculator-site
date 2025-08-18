@@ -1,0 +1,26 @@
+.calculator-container {
+  background-color: rgb(50, 50, 50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Wider on mobile, still limited on large desktop */
+  width: clamp(20rem, 95vw, 40rem);
+
+  /* Taller so it fills more space vertically */
+  min-height: clamp(30rem, 80vh, 100rem);
+
+  /* Padding scales with screen size */
+  padding: clamp(1rem, 3vw, 2rem);
+
+  margin: 2vh auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: clamp(2rem, 5vh, 4rem);
+  font-weight: 500;
+}

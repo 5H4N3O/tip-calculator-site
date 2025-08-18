@@ -1,0 +1,27 @@
+* {
+  font-family: Rubik;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  background: linear-gradient(
+    45deg,
+    oklch(82.6% 0.12 308.098) 0% 0%,
+    oklch(82.592% 0.12 202.881) 100%
+  );
+}
+
+html {
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+div,
+button {
+  color: white;
+}
